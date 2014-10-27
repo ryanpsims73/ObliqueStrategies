@@ -18,12 +18,13 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
     @IBOutlet weak var targetUIButton: UIButton!
     @IBOutlet weak var targetImageView: UIImageView!
     @IBOutlet weak var smallCardsImageView: UIImageView!
+    @IBOutlet weak var largeCardImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
+        self.largeCardImageView.alpha = 0;
         UIView.animateWithDuration(1.2, delay: 0.0, options: .Autoreverse | .Repeat, animations: { () -> Void in
             self.targetImageView.alpha = 0.3
             }, completion: nil)
@@ -35,12 +36,15 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
     }
     
     @IBAction func targetTap(sender: AnyObject) {
-        UIView.animateWithDuration(0.75, delay: 0, options: nil, animations: { () -> Void in
+        UIView.animateWithDuration(0.75, delay: 0, options: .CurveEaseInOut, animations: { () -> Void in
             // lift title up
             self.titleImageView.transform = CGAffineTransformMakeTranslation(0.0, -230.0)
             // scale mini cards and target
+            self.largeCardImageView.alpha = 1
             self.cardsView.transform = CGAffineTransformMakeTranslation(0.0, -130.0)
             self.cardsView.transform = CGAffineTransformScale(self.cardsView.transform, 6.06, 6.06)
+            self.smallCardsImageView.alpha = 0;
+            self.targetImageView.alpha = 0;
         }) { (finished: Bool) -> Void in
             // load our next view
             self.performSegueWithIdentifier("cardSegue", sender: self)
@@ -66,7 +70,7 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.2
+        return 0.3
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -78,13 +82,13 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
         if (isPresenting) {
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
                 toViewController.view.alpha = 1
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
             }
         } else {
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
                 fromViewController.view.alpha = 0
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)

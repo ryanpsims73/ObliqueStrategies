@@ -46,6 +46,10 @@
                                                     <action selector="targetTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cfq-dB-fUc"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="large-card" id="AKP-8d-Q3z">
+                                                <rect key="frame" x="139" y="18" width="42" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                     </view>
                                 </subviews>
@@ -55,6 +59,7 @@
                     </view>
                     <connections>
                         <outlet property="cardsView" destination="UOO-z3-gHA" id="84W-xl-7Is"/>
+                        <outlet property="largeCardImageView" destination="AKP-8d-Q3z" id="Kmp-2e-0nE"/>
                         <outlet property="launchView" destination="axb-UY-mP1" id="2Q0-az-LOV"/>
                         <outlet property="smallCardsImageView" destination="sdd-F2-3zG" id="AiB-XE-qJE"/>
                         <outlet property="targetImageView" destination="A3H-Qh-f2i" id="R2D-8x-YQg"/>
@@ -96,6 +101,7 @@
         <image name="Linear Gradient" width="320" height="568"/>
         <image name="Target" width="102" height="102"/>
         <image name="Title" width="262" height="140"/>
+        <image name="large-card" width="252" height="402"/>
         <image name="small-card-set" width="487" height="67"/>
         <image name="stack" width="252" height="413"/>
     </resources>
