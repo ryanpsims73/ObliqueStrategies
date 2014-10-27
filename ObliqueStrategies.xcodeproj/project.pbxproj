@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3661BC3E19FD3C9500A6F3CB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661BC3D19FD3C9500A6F3CB /* LaunchViewController.swift */; };
 		36715A4419E478FA00D746DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36715A4319E478FA00D746DB /* AppDelegate.swift */; };
 		36715A4619E478FA00D746DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36715A4519E478FA00D746DB /* ViewController.swift */; };
 		36715A4919E478FA00D746DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36715A4719E478FA00D746DB /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3661BC3D19FD3C9500A6F3CB /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ObliqueStrategies/LaunchViewController.swift; sourceTree = "<group>"; };
 		36715A3E19E478FA00D746DB /* ObliqueStrategies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObliqueStrategies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36715A4219E478FA00D746DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36715A4319E478FA00D746DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +38,7 @@
 		36715A5319E478FB00D746DB /* ObliqueStrategiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObliqueStrategiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36715A5819E478FB00D746DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36715A5919E478FB00D746DB /* ObliqueStrategiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObliqueStrategiesTests.swift; sourceTree = "<group>"; };
+		36CC0CD619F8AFF100CB6173 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 		36715A3519E478FA00D746DB = {
 			isa = PBXGroup;
 			children = (
+				3661BC3D19FD3C9500A6F3CB /* LaunchViewController.swift */,
 				36715A4019E478FA00D746DB /* ObliqueStrategies */,
 				36715A5619E478FB00D746DB /* ObliqueStrategiesTests */,
 				36715A3F19E478FA00D746DB /* Products */,
@@ -80,6 +84,7 @@
 				36715A4319E478FA00D746DB /* AppDelegate.swift */,
 				36715A4519E478FA00D746DB /* ViewController.swift */,
 				36715A4719E478FA00D746DB /* Main.storyboard */,
+				36CC0CD619F8AFF100CB6173 /* MyPlayground.playground */,
 				36715A4A19E478FA00D746DB /* Images.xcassets */,
 				36715A4C19E478FA00D746DB /* LaunchScreen.xib */,
 				36715A4119E478FA00D746DB /* Supporting Files */,
@@ -213,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36715A4619E478FA00D746DB /* ViewController.swift in Sources */,
+				3661BC3E19FD3C9500A6F3CB /* LaunchViewController.swift in Sources */,
 				36715A4419E478FA00D746DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +411,7 @@
 				36715A5F19E478FB00D746DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36715A6019E478FB00D746DB /* Build configuration list for PBXNativeTarget "ObliqueStrategiesTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +420,7 @@
 				36715A6219E478FB00D746DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
