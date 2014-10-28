@@ -42,7 +42,7 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
             // scale mini cards and target
             self.largeCardImageView.alpha = 1
             self.cardsView.transform = CGAffineTransformMakeTranslation(0.0, -130.0)
-            self.cardsView.transform = CGAffineTransformScale(self.cardsView.transform, 6.06, 6.06)
+            self.cardsView.transform = CGAffineTransformScale(self.cardsView.transform, 6.05, 6.05)
             self.smallCardsImageView.alpha = 0;
             self.targetImageView.alpha = 0;
         }) { (finished: Bool) -> Void in

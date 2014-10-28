@@ -14,6 +14,7 @@
 		36715A4B19E478FA00D746DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36715A4A19E478FA00D746DB /* Images.xcassets */; };
 		36715A4E19E478FA00D746DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36715A4C19E478FA00D746DB /* LaunchScreen.xib */; };
 		36715A5A19E478FB00D746DB /* ObliqueStrategiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36715A5919E478FB00D746DB /* ObliqueStrategiesTests.swift */; };
+		36CF285419FF290700DE39D7 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CF285319FF290700DE39D7 /* StackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		36715A5819E478FB00D746DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36715A5919E478FB00D746DB /* ObliqueStrategiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObliqueStrategiesTests.swift; sourceTree = "<group>"; };
 		36CC0CD619F8AFF100CB6173 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		36CF285319FF290700DE39D7 /* StackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				36715A4319E478FA00D746DB /* AppDelegate.swift */,
 				36715A4519E478FA00D746DB /* ViewController.swift */,
 				36715A4719E478FA00D746DB /* Main.storyboard */,
+				36CF285319FF290700DE39D7 /* StackViewController.swift */,
 				36CC0CD619F8AFF100CB6173 /* MyPlayground.playground */,
 				36715A4A19E478FA00D746DB /* Images.xcassets */,
 				36715A4C19E478FA00D746DB /* LaunchScreen.xib */,
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36715A4619E478FA00D746DB /* ViewController.swift in Sources */,
+				36CF285419FF290700DE39D7 /* StackViewController.swift in Sources */,
 				3661BC3E19FD3C9500A6F3CB /* LaunchViewController.swift in Sources */,
 				36715A4419E478FA00D746DB /* AppDelegate.swift in Sources */,
 			);
