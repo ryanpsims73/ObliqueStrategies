@@ -110,12 +110,22 @@
                                     </textView>
                                 </subviews>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="large-card-target" id="Doc-Sl-k6w">
+                                <rect key="frame" x="34" y="530" width="252" height="402"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-outline" id="PCO-5n-Y98">
+                                <rect key="frame" x="151" y="542" width="18" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="GAL-CB-2rc" id="jpg-I0-ERV"/>
+                        <outlet property="favoritesImageView" destination="Doc-Sl-k6w" id="pAa-kB-7sm"/>
+                        <outlet property="heartImageView" destination="PCO-5n-Y98" id="dgr-0K-bwo"/>
                         <outlet property="largeCardImageView" destination="1hX-D5-j6o" id="6gX-MH-8C6"/>
                         <outlet property="largeCardView" destination="Gzh-i5-B5V" id="Wbo-TM-RaH"/>
                         <outlet property="stackImageView" destination="iPc-Ma-ojQ" id="QaH-Ep-0sr"/>
@@ -133,7 +143,9 @@
         <image name="Target" width="102" height="102"/>
         <image name="Title" width="262" height="140"/>
         <image name="card-image-0" width="250" height="239"/>
+        <image name="heart-outline" width="21" height="18"/>
         <image name="large-card" width="252" height="402"/>
+        <image name="large-card-target" width="252" height="402"/>
         <image name="small-card-set" width="487" height="67"/>
         <image name="stack" width="252" height="413"/>
     </resources>

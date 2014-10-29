@@ -14,6 +14,8 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var largeCardView: UIView!
     @IBOutlet weak var largeCardImageView: UIImageView!
     @IBOutlet weak var stackImageView: UIImageView!
+    @IBOutlet weak var favoritesImageView: UIImageView!
+    @IBOutlet weak var heartImageView: UIImageView!
 
     var baseStrategyDictionary = [Int: String]()
     
@@ -214,10 +216,11 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
     
         // Rotational angle based on amount of movement
         var translationPercentage = Double((translation.x/320))
-        var angle = translationPercentage / 1
+        var angle = translationPercentage / 2
         
         // Movement cutpoints
-        let panRotationCutpoint: CGFloat = 75
+        let horizontalCutpoint: CGFloat = 10
+        let verticalCutpoint: CGFloat = 10
         
         if gestureRecognizer.state == UIGestureRecognizerState.Began {
             activeCardCenter = senderCard.center
@@ -233,64 +236,108 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
             // Movement
             println("Panning")
             
-            if velocity.x > panRotationCutpoint {
+            if translation.x > horizontalCutpoint {
                 UIView.animateWithDuration(0.1, delay: 0, options: nil, animations: { () -> Void in
                     //self.largeCardImageView.alpha = 0.7
                     senderCard.transform = CGAffineTransformRotate(senderCard.transform, CGFloat(angle * M_PI / 180))
                     }) { (finished: Bool) -> Void in
                 }
-            } else if velocity.x < -panRotationCutpoint {
+                senderCard.center.x = translation.x + activeCardCenter.x
+            } else if translation.x < -horizontalCutpoint {
                 UIView.animateWithDuration(0.1, delay: 0, options: nil, animations: { () -> Void in
                     //self.largeCardImageView.alpha = 0.7
                     senderCard.transform = CGAffineTransformRotate(senderCard.transform, CGFloat(angle * M_PI / 180))
                     }) { (finished: Bool) -> Void in
                 }
+                senderCard.center.x = translation.x + activeCardCenter.x
+            } else if translation.y > verticalCutpoint {
+                senderCard.center.y = translation.y + activeCardCenter.y
             }
-            senderCard.center.x = translation.x + activeCardCenter.x
         }
         else if gestureRecognizer.state == UIGestureRecognizerState.Ended {
             // Panning ends
             // Cleanup
             println("Pan ended")
             var cardDestination: CGFloat
+            
+            var horizontalDrag: Bool = false
+            var verticalDrag: Bool = false
+            
+            if (abs(velocity.x) > abs(velocity.y)) {
+                horizontalDrag = true
+            } else if (abs(velocity.y) > abs(velocity.x)) {
+                verticalDrag = true
+            }
+            
+            print("horizontal drag: \(horizontalDrag)")
+            print("vertical drag: \(verticalDrag)")
 
             // Evaluate drag position
-            switch translation.x {
-            case 0...50:
-                UIView.animateWithDuration(0.2, delay: 0, options: nil, animations: { () -> Void in
-                    senderCard.transform = CGAffineTransformIdentity
-                    senderCard.center.x = self.activeCardCenter.x
-                    //self.largeCardImageView.alpha = 1
-                    }) { (finished: Bool) -> Void in
-                }
-            case -50...0:
-                UIView.animateWithDuration(0.2, delay: 0, options: nil, animations: { () -> Void in
-                    senderCard.transform = CGAffineTransformIdentity
-                    senderCard.center.x = self.activeCardCenter.x
-                    //self.largeCardImageView.alpha = 1
-                    }) { (finished: Bool) -> Void in
-                }
-            default:
-                if velocity.x > 0 {
-                    cardDestination = 320
-                } else {
-                    cardDestination = -320
-                }
-                UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
-                    senderCard.transform = CGAffineTransformIdentity
-                    senderCard.frame.origin.x = cardDestination
-                    }) { (finished: Bool) -> Void in
-                    UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
-                        senderCard.alpha = 0.75
-                        senderCard.transform = CGAffineTransformMakeScale(0.95, 0.95)
+            if horizontalDrag {
+                switch translation.x {
+                case 0...50:
+                    UIView.animateWithDuration(0.2, delay: 0, options: nil, animations: { () -> Void in
+                        senderCard.transform = CGAffineTransformIdentity
                         senderCard.center.x = self.activeCardCenter.x
+                        //self.largeCardImageView.alpha = 1
                         }) { (finished: Bool) -> Void in
-                          self.view.sendSubviewToBack(senderCard)
-                            senderCard.removeFromSuperview()
-                        }
-                    self.incrementCardIndex()
-                    self.loadCard(self.activeBaseCardIndex)
+                    }
+                case -50...0:
+                    UIView.animateWithDuration(0.2, delay: 0, options: nil, animations: { () -> Void in
+                        senderCard.transform = CGAffineTransformIdentity
+                        senderCard.center.x = self.activeCardCenter.x
+                        //self.largeCardImageView.alpha = 1
+                        }) { (finished: Bool) -> Void in
+                    }
+                default:
+                    if velocity.x > 0 {
+                        cardDestination = 320
+                    } else {
+                        cardDestination = -320
+                    }
+                    UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
+                        senderCard.transform = CGAffineTransformIdentity
+                        senderCard.frame.origin.x = cardDestination
+                        }) { (finished: Bool) -> Void in
+                        UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
+                            senderCard.alpha = 0.75
+                            senderCard.transform = CGAffineTransformMakeScale(0.95, 0.95)
+                            senderCard.center.x = self.activeCardCenter.x
+                            }) { (finished: Bool) -> Void in
+                              self.view.sendSubviewToBack(senderCard)
+                                senderCard.removeFromSuperview()
+                            }
+                        self.incrementCardIndex()
+                        self.loadCard(self.activeBaseCardIndex)
+                    }
                 }
+            } else if verticalDrag {
+                switch translation.y {
+                case 0...50:
+                    UIView.animateWithDuration(0.2, delay: 0, options: nil, animations: { () -> Void in
+                        senderCard.transform = CGAffineTransformIdentity
+                        senderCard.center.x = self.activeCardCenter.x
+                        //self.largeCardImageView.alpha = 1
+                        }) { (finished: Bool) -> Void in
+                    }
+                default:
+                    cardDestination = 530
+
+                    UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
+                        senderCard.transform = CGAffineTransformIdentity
+                        senderCard.frame.origin.y = cardDestination
+                        senderCard.frame.origin.x = self.largeCardView.frame.origin.x
+                        }) { (finished: Bool) -> Void in
+                            UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
+                                senderCard.alpha = 0
+                                }) { (finished: Bool) -> Void in
+                                    senderCard.removeFromSuperview()
+                            }
+                            self.incrementCardIndex()
+                            self.loadCard(self.activeBaseCardIndex)
+                    }
+                }
+                
             }
         }
     }
