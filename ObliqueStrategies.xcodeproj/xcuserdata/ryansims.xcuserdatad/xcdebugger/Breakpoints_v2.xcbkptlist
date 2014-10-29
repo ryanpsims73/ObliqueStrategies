@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ObliqueStrategies/StackViewController.swift"
-            timestampString = "436264394.462946"
+            timestampString = "436290079.132207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "largeCardPan(_:)"
             landmarkType = "5">
          </BreakpointContent>

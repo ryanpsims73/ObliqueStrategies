@@ -13,6 +13,7 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var largeCardView: UIView!
     @IBOutlet weak var largeCardImageView: UIImageView!
+    @IBOutlet weak var largeCardUIText: UITextView!
     @IBOutlet weak var stackImageView: UIImageView!
     @IBOutlet weak var favoritesImageView: UIImageView!
     @IBOutlet weak var heartImageView: UIImageView!
@@ -33,7 +34,11 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         // hide base card template
-        self.largeCardView.hidden = true
+        self.largeCardView.alpha = 0
+        self.largeCardUIText.textAlignment = .Center
+        self.largeCardUIText.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        self.largeCardUIText.editable = false
+        self.largeCardUIText.userInteractionEnabled = true
         
         // populate strategy dictionary
         baseStrategyDictionary = [
@@ -168,6 +173,14 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func loadCard(activeCardIndex: Int) {
+        var tempCardIndex: Int
+        
+        if self.activeBaseCardIndex == baseStrategyDictionary.count {
+            tempCardIndex = 0
+        } else {
+            tempCardIndex = self.activeBaseCardIndex + 1
+        }
+        
         // setup our card in the UI
         var activeCard = UIView(frame: cardFrontCGRect)
 
@@ -198,6 +211,10 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
         
         // add it to the view
         view.addSubview(activeCard)
+        
+        // load fake view behind this one
+        self.largeCardUIText.text = baseStrategyDictionary[tempCardIndex]
+        
     }
     
     func largeCardTap(gestureRecognizer: UITapGestureRecognizer) {
@@ -215,8 +232,9 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
         var velocity = gestureRecognizer.velocityInView(view)
     
         // Rotational angle based on amount of movement
-        var translationPercentage = Double((translation.x/320))
-        var angle = translationPercentage / 2
+        var translationPercentageX = Double((translation.x/320))
+        var translationPercentageY = Double((translation.y/568))
+        var angle = translationPercentageX / 2
         
         // Movement cutpoints
         let horizontalCutpoint: CGFloat = 10
@@ -242,6 +260,7 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
                     senderCard.transform = CGAffineTransformRotate(senderCard.transform, CGFloat(angle * M_PI / 180))
                     }) { (finished: Bool) -> Void in
                 }
+                self.largeCardView.alpha = CGFloat(translationPercentageX)
                 senderCard.center.x = translation.x + activeCardCenter.x
             } else if translation.x < -horizontalCutpoint {
                 UIView.animateWithDuration(0.1, delay: 0, options: nil, animations: { () -> Void in
@@ -249,8 +268,10 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
                     senderCard.transform = CGAffineTransformRotate(senderCard.transform, CGFloat(angle * M_PI / 180))
                     }) { (finished: Bool) -> Void in
                 }
+                self.largeCardView.alpha = CGFloat(translationPercentageX)
                 senderCard.center.x = translation.x + activeCardCenter.x
             } else if translation.y > verticalCutpoint {
+                self.largeCardView.alpha = CGFloat(translationPercentageY)
                 senderCard.center.y = translation.y + activeCardCenter.y
             }
         }

@@ -101,7 +101,7 @@
                                         <rect key="frame" x="1" y="0.0" width="250" height="239"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Make an exhaustive list of everything you might do and do the last thing on the list" textAlignment="center" id="p5z-6r-LDe">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Make an exhaustive list of everything you might do and do the last thing on the list" textAlignment="center" id="p5z-6r-LDe">
                                         <rect key="frame" x="16" y="264" width="220" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,6 +127,7 @@
                         <outlet property="favoritesImageView" destination="Doc-Sl-k6w" id="pAa-kB-7sm"/>
                         <outlet property="heartImageView" destination="PCO-5n-Y98" id="dgr-0K-bwo"/>
                         <outlet property="largeCardImageView" destination="1hX-D5-j6o" id="6gX-MH-8C6"/>
+                        <outlet property="largeCardUIText" destination="p5z-6r-LDe" id="vAq-Sy-uXe"/>
                         <outlet property="largeCardView" destination="Gzh-i5-B5V" id="Wbo-TM-RaH"/>
                         <outlet property="stackImageView" destination="iPc-Ma-ojQ" id="QaH-Ep-0sr"/>
                     </connections>
