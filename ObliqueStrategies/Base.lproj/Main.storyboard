@@ -96,40 +96,34 @@
                                         <rect key="frame" x="0.0" y="0.0" width="252" height="402"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Hfa-cV-U4e" appends="YES" id="Sdx-uF-a6S"/>
-                                        </connections>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-image-0" id="6lu-kz-iw0">
                                         <rect key="frame" x="1" y="0.0" width="250" height="239"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Make an exhaustive list of everything you might do and do the last thing on the list" textAlignment="center" id="p5z-6r-LDe">
+                                        <rect key="frame" x="16" y="264" width="220" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="sOS-dA-2up" appends="YES" id="ghi-tT-9Ul"/>
-                        </connections>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="GAL-CB-2rc" id="jpg-I0-ERV"/>
                         <outlet property="largeCardImageView" destination="1hX-D5-j6o" id="6gX-MH-8C6"/>
                         <outlet property="largeCardView" destination="Gzh-i5-B5V" id="Wbo-TM-RaH"/>
                         <outlet property="stackImageView" destination="iPc-Ma-ojQ" id="QaH-Ep-0sr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CsM-IB-lWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Hfa-cV-U4e">
-                    <connections>
-                        <action selector="largeCardPan:" destination="GC6-95-b1H" id="4NQ-ix-0ZN"/>
-                    </connections>
-                </panGestureRecognizer>
-                <tapGestureRecognizer id="sOS-dA-2up">
-                    <connections>
-                        <action selector="largeCardTap:" destination="GC6-95-b1H" id="JY9-iN-h0b"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Hfa-cV-U4e"/>
+                <tapGestureRecognizer id="sOS-dA-2up"/>
             </objects>
             <point key="canvasLocation" x="664" y="406"/>
         </scene>
