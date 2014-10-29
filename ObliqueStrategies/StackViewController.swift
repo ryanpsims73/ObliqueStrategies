@@ -17,8 +17,8 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
 
     var baseStrategyDictionary = [Int: String]()
     
-    var activeBaseCardIndex = Int(0)
-    var activePersonalCardIndex = Int(0)
+    var activeBaseCardIndex = Int(1)
+    var activePersonalCardIndex = Int(1)
     
     var activeCardCenter = CGPoint()
     
@@ -35,7 +35,6 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
         
         // populate strategy dictionary
         baseStrategyDictionary = [
-            0: "Abandon normal instruments",
             1: "Always first steps",
             2: "Make an exhaustive list of everything you might do and do the last thing on the list",
             3: "Destroy: Nothing. The most important thing.",
@@ -137,7 +136,8 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
             99: "Look closely at the most embarassment details and amplify them",
             100: "Make something implied more definite (reinforce, duplicate)",
             101: "Slow preparation... Fast execution",
-            102: "Humanize something free of error"
+            102: "Humanize something free of error",
+            103: "Abandon normal instruments",
         ]
 
         // Do any additional setup after loading the view.
@@ -147,6 +147,22 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func incrementCardIndex() {
+        if self.activeBaseCardIndex == baseStrategyDictionary.count {
+            self.activeBaseCardIndex = 0
+        } else {
+            self.activeBaseCardIndex += 1
+        }
+    }
+    
+    func decrementCardInex() {
+        if self.activeBaseCardIndex == 1 {
+            self.activeBaseCardIndex = baseStrategyDictionary.count
+        } else {
+            self.activeBaseCardIndex -= 1
+        }
     }
     
     func loadCard(activeCardIndex: Int) {
@@ -163,6 +179,8 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
         activeCardTextView.text = baseStrategyDictionary[activeCardIndex]
         activeCardTextView.textAlignment = .Center
         activeCardTextView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        activeCardTextView.editable = false
+        activeCardTextView.userInteractionEnabled = true
 
         activeCard.addSubview(activeCardImage)
         activeCard.addSubview(activeCardTopImage)
@@ -235,11 +253,6 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
             // Cleanup
             println("Pan ended")
             var cardDestination: CGFloat
-            if velocity.x > 0 {
-                cardDestination = 320
-            } else {
-                cardDestination = -320
-            }
 
             // Evaluate drag position
             switch translation.x {
@@ -258,11 +271,25 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
                     }) { (finished: Bool) -> Void in
                 }
             default:
-                UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: { () -> Void in
+                if velocity.x > 0 {
+                    cardDestination = 320
+                } else {
+                    cardDestination = -320
+                }
+                UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
                     senderCard.transform = CGAffineTransformIdentity
                     senderCard.frame.origin.x = cardDestination
                     }) { (finished: Bool) -> Void in
-                    // pop new card to front
+                    UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
+                        senderCard.alpha = 0.75
+                        senderCard.transform = CGAffineTransformMakeScale(0.95, 0.95)
+                        senderCard.center.x = self.activeCardCenter.x
+                        }) { (finished: Bool) -> Void in
+                          self.view.sendSubviewToBack(senderCard)
+                            senderCard.removeFromSuperview()
+                        }
+                    self.incrementCardIndex()
+                    self.loadCard(self.activeBaseCardIndex)
                 }
             }
         }

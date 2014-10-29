@@ -11,10 +11,10 @@
 		36715A4419E478FA00D746DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36715A4319E478FA00D746DB /* AppDelegate.swift */; };
 		36715A4619E478FA00D746DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36715A4519E478FA00D746DB /* ViewController.swift */; };
 		36715A4919E478FA00D746DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36715A4719E478FA00D746DB /* Main.storyboard */; };
-		36715A4B19E478FA00D746DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36715A4A19E478FA00D746DB /* Images.xcassets */; };
 		36715A4E19E478FA00D746DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36715A4C19E478FA00D746DB /* LaunchScreen.xib */; };
 		36715A5A19E478FB00D746DB /* ObliqueStrategiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36715A5919E478FB00D746DB /* ObliqueStrategiesTests.swift */; };
 		36CF285419FF290700DE39D7 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CF285319FF290700DE39D7 /* StackViewController.swift */; };
+		36F24CC61A00CA2400E523AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F24CC51A00CA2400E523AE /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,13 +34,13 @@
 		36715A4319E478FA00D746DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36715A4519E478FA00D746DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		36715A4819E478FA00D746DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		36715A4A19E478FA00D746DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		36715A4D19E478FA00D746DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		36715A5319E478FB00D746DB /* ObliqueStrategiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObliqueStrategiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36715A5819E478FB00D746DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36715A5919E478FB00D746DB /* ObliqueStrategiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObliqueStrategiesTests.swift; sourceTree = "<group>"; };
 		36CC0CD619F8AFF100CB6173 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		36CF285319FF290700DE39D7 /* StackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
+		36F24CC51A00CA2400E523AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +83,12 @@
 		36715A4019E478FA00D746DB /* ObliqueStrategies */ = {
 			isa = PBXGroup;
 			children = (
+				36F24CC51A00CA2400E523AE /* Images.xcassets */,
 				36715A4319E478FA00D746DB /* AppDelegate.swift */,
 				36715A4519E478FA00D746DB /* ViewController.swift */,
 				36715A4719E478FA00D746DB /* Main.storyboard */,
 				36CF285319FF290700DE39D7 /* StackViewController.swift */,
 				36CC0CD619F8AFF100CB6173 /* MyPlayground.playground */,
-				36715A4A19E478FA00D746DB /* Images.xcassets */,
 				36715A4C19E478FA00D746DB /* LaunchScreen.xib */,
 				36715A4119E478FA00D746DB /* Supporting Files */,
 			);
@@ -200,9 +200,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F24CC61A00CA2400E523AE /* Images.xcassets in Resources */,
 				36715A4919E478FA00D746DB /* Main.storyboard in Resources */,
 				36715A4E19E478FA00D746DB /* LaunchScreen.xib in Resources */,
-				36715A4B19E478FA00D746DB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
