@@ -14,7 +14,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Linear Gradient" id="hW4-dY-L8I">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="axb-UY-mP1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -82,7 +82,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Linear Gradient" id="GAL-CB-2rc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stack" id="iPc-Ma-ojQ">
                                 <rect key="frame" x="34" y="77" width="252" height="413"/>
@@ -129,6 +129,7 @@
                         <outlet property="largeCardImageView" destination="1hX-D5-j6o" id="6gX-MH-8C6"/>
                         <outlet property="largeCardUIText" destination="p5z-6r-LDe" id="vAq-Sy-uXe"/>
                         <outlet property="largeCardView" destination="Gzh-i5-B5V" id="Wbo-TM-RaH"/>
+                        <outlet property="largeGraphicImageView" destination="6lu-kz-iw0" id="FMo-Hb-oKY"/>
                         <outlet property="stackImageView" destination="iPc-Ma-ojQ" id="QaH-Ep-0sr"/>
                     </connections>
                 </viewController>

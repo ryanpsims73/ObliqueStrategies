@@ -13,13 +13,16 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var largeCardView: UIView!
     @IBOutlet weak var largeCardImageView: UIImageView!
+    @IBOutlet weak var largeGraphicImageView: UIImageView!
     @IBOutlet weak var largeCardUIText: UITextView!
     @IBOutlet weak var stackImageView: UIImageView!
     @IBOutlet weak var favoritesImageView: UIImageView!
     @IBOutlet weak var heartImageView: UIImageView!
 
     var baseStrategyDictionary = [Int: String]()
+    var baseStrategyImageDictionary = [Int: String]()
     
+    var personalStrategyArray:Array<Any>  = []
     var activeBaseCardIndex = Int(1)
     var activePersonalCardIndex = Int(1)
     
@@ -146,6 +149,112 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
             102: "Humanize something free of error",
             103: "Abandon normal instruments",
         ]
+        
+        baseStrategyImageDictionary = [
+            1: "card-image-0",
+            2: "card-image-1",
+            3: "card-image-2",
+            4: "card-image-3",
+            5: "card-image-4",
+            6: "card-image-0",
+            7: "card-image-1",
+            8: "card-image-2",
+            9: "card-image-3",
+            10: "card-image-4",
+            11: "card-image-0",
+            12: "card-image-1",
+            13: "card-image-2",
+            14: "card-image-3",
+            15: "card-image-4",
+            16: "card-image-0",
+            17: "card-image-1",
+            18: "card-image-2",
+            19: "card-image-3",
+            20: "card-image-4",
+            21: "card-image-0",
+            22: "card-image-0",
+            23: "card-image-0",
+            24: "card-image-0",
+            25: "card-image-0",
+            26: "card-image-0",
+            27: "card-image-0",
+            28: "card-image-0",
+            29: "card-image-0",
+            30: "card-image-0",
+            31: "card-image-0",
+            32: "card-image-0",
+            33: "card-image-0",
+            34: "card-image-0",
+            35: "card-image-0",
+            36: "card-image-0",
+            37: "card-image-0",
+            38: "card-image-0",
+            39: "card-image-0",
+            40: "card-image-0",
+            41: "card-image-0",
+            42: "card-image-0",
+            43: "card-image-0",
+            44: "card-image-0",
+            45: "card-image-0",
+            46: "card-image-0",
+            47: "card-image-0",
+            48: "card-image-0",
+            49: "card-image-0",
+            50: "card-image-0",
+            51: "card-image-0",
+            52: "card-image-0",
+            53: "card-image-0",
+            54: "card-image-0",
+            55: "card-image-0",
+            56: "card-image-0",
+            57: "card-image-0",
+            58: "card-image-0",
+            59: "card-image-0",
+            60: "card-image-0",
+            61: "card-image-0",
+            62: "card-image-0",
+            63: "card-image-0",
+            64: "card-image-0",
+            65: "card-image-0",
+            66: "card-image-0",
+            67: "card-image-0",
+            68: "card-image-0",
+            69: "card-image-0",
+            70: "card-image-0",
+            71: "card-image-0",
+            72: "card-image-0",
+            73: "card-image-0",
+            74: "card-image-0",
+            75: "card-image-0",
+            76: "card-image-0",
+            77: "card-image-0",
+            78: "card-image-0",
+            79: "card-image-0",
+            80: "card-image-0",
+            81: "card-image-0",
+            82: "card-image-0",
+            83: "card-image-0",
+            84: "card-image-0",
+            85: "card-image-0",
+            86: "card-image-0",
+            87: "card-image-0",
+            88: "card-image-0",
+            89: "card-image-0",
+            90: "card-image-0",
+            91: "card-image-0",
+            92: "card-image-0",
+            93: "card-image-0",
+            94: "card-image-0",
+            95: "card-image-0",
+            96: "card-image-0",
+            97: "card-image-0",
+            98: "card-image-0",
+            99: "card-image-0",
+            100: "card-image-0",
+            101: "card-image-0",
+            102: "card-image-0",
+            103: "card-image-0",
+        ]
 
         // Do any additional setup after loading the view.
         loadCard(activeBaseCardIndex)
@@ -188,7 +297,7 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
         activeCardImage.image = UIImage(named: "large-card")
 
         var activeCardTopImage = UIImageView(frame: cardFrontTopImageCGRect)
-        activeCardTopImage.image = UIImage(named: "card-image-0")
+        activeCardTopImage.image = UIImage(named: baseStrategyImageDictionary[activeCardIndex]!)
         
         var activeCardTextView = UITextView(frame: cardFrontTextViewCGRect)
         activeCardTextView.text = baseStrategyDictionary[activeCardIndex]
@@ -214,6 +323,7 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
         
         // load fake view behind this one
         self.largeCardUIText.text = baseStrategyDictionary[tempCardIndex]
+        self.largeGraphicImageView.image = UIImage(named: baseStrategyImageDictionary[tempCardIndex]!)
         
     }
     
@@ -260,7 +370,7 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
                     senderCard.transform = CGAffineTransformRotate(senderCard.transform, CGFloat(angle * M_PI / 180))
                     }) { (finished: Bool) -> Void in
                 }
-                self.largeCardView.alpha = CGFloat(translationPercentageX)
+                self.largeCardView.alpha = CGFloat(abs(translationPercentageX))
                 senderCard.center.x = translation.x + activeCardCenter.x
             } else if translation.x < -horizontalCutpoint {
                 UIView.animateWithDuration(0.1, delay: 0, options: nil, animations: { () -> Void in
@@ -268,10 +378,10 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
                     senderCard.transform = CGAffineTransformRotate(senderCard.transform, CGFloat(angle * M_PI / 180))
                     }) { (finished: Bool) -> Void in
                 }
-                self.largeCardView.alpha = CGFloat(translationPercentageX)
+                self.largeCardView.alpha = CGFloat(abs(translationPercentageX))
                 senderCard.center.x = translation.x + activeCardCenter.x
             } else if translation.y > verticalCutpoint {
-                self.largeCardView.alpha = CGFloat(translationPercentageY)
+                self.largeCardView.alpha = CGFloat(abs(translationPercentageY))
                 senderCard.center.y = translation.y + activeCardCenter.y
             }
         }
@@ -289,9 +399,6 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
             } else if (abs(velocity.y) > abs(velocity.x)) {
                 verticalDrag = true
             }
-            
-            print("horizontal drag: \(horizontalDrag)")
-            print("vertical drag: \(verticalDrag)")
 
             // Evaluate drag position
             if horizontalDrag {
@@ -342,6 +449,10 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
                         }) { (finished: Bool) -> Void in
                     }
                 default:
+                    self.personalStrategyArray.append((self.activeBaseCardIndex))
+                    self.heartImageView.image = UIImage(named: "heart-filled")
+                    println(self.personalStrategyArray.count)
+                    
                     cardDestination = 530
 
                     UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
@@ -353,6 +464,11 @@ class StackViewController: UIViewController, UIGestureRecognizerDelegate {
                                 senderCard.alpha = 0
                                 }) { (finished: Bool) -> Void in
                                     senderCard.removeFromSuperview()
+                                    UIView.animateWithDuration(0.2, delay: 0, options: nil, animations: { () -> Void in
+                                        self.heartImageView.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                                        }) { (finished: Bool) -> Void in
+                                        self.heartImageView.transform = CGAffineTransformIdentity
+                                    }
                             }
                             self.incrementCardIndex()
                             self.loadCard(self.activeBaseCardIndex)

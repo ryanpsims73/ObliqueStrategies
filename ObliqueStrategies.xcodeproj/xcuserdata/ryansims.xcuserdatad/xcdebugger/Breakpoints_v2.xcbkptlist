@@ -26,13 +26,115 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ObliqueStrategies/StackViewController.swift"
-            timestampString = "436290079.132207"
+            timestampString = "436323543.41737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
             landmarkName = "largeCardPan(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ObliqueStrategies/StackViewController.swift"
+            timestampString = "436323543.41737"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "StackViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObliqueStrategies.StackViewController.personalStrategyDictionary.getter : Swift.Dictionary&lt;Swift.Int, Swift.String&gt;"
+                  moduleName = "ObliqueStrategies"
+                  urlString = "file:///Users/ryansims/Development/codepath/group-assignment/ObliqueStrategies/ObliqueStrategies/StackViewController.swift"
+                  timestampString = "436315655.695909"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObliqueStrategies.StackViewController.personalStrategyDictionary.setter : Swift.Dictionary&lt;Swift.Int, Swift.String&gt;"
+                  moduleName = "ObliqueStrategies"
+                  urlString = "file:///Users/ryansims/Development/codepath/group-assignment/ObliqueStrategies/ObliqueStrategies/StackViewController.swift"
+                  timestampString = "436315655.696801"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObliqueStrategies.StackViewController.personalStrategyDictionary.materializeForSet : Swift.Dictionary&lt;Swift.Int, Swift.String&gt;"
+                  moduleName = "ObliqueStrategies"
+                  urlString = "file:///Users/ryansims/Development/codepath/group-assignment/ObliqueStrategies/ObliqueStrategies/StackViewController.swift"
+                  timestampString = "436315655.696944"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObliqueStrategies.StackViewController.init (ObliqueStrategies.StackViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; ObliqueStrategies.StackViewController"
+                  moduleName = "ObliqueStrategies"
+                  urlString = "file:///Users/ryansims/Development/codepath/group-assignment/ObliqueStrategies/ObliqueStrategies/StackViewController.swift"
+                  timestampString = "436315655.697085"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "559">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObliqueStrategies.StackViewController.init (ObliqueStrategies.StackViewController.Type)() -&gt; ObliqueStrategies.StackViewController"
+                  moduleName = "ObliqueStrategies"
+                  urlString = "file:///Users/ryansims/Development/codepath/group-assignment/ObliqueStrategies/ObliqueStrategies/StackViewController.swift"
+                  timestampString = "436315655.697203"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "565">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ObliqueStrategies.StackViewController.init (ObliqueStrategies.StackViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; ObliqueStrategies.StackViewController"
+                  moduleName = "ObliqueStrategies"
+                  urlString = "file:///Users/ryansims/Development/codepath/group-assignment/ObliqueStrategies/ObliqueStrategies/StackViewController.swift"
+                  timestampString = "436315655.697313"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "576">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
